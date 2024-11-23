@@ -100,7 +100,8 @@ void	set_(char **args, t_list **envpX, int nbr_cmds)
 	t_list	*tmp;
 	t_list	*envp;
 	t_env	*env;
-
+	t_list	*s;
+	s = *envpX;
 	tmp = NULL;
 	envp = *envpX;
 	i = 0;
@@ -121,4 +122,5 @@ void	set_(char **args, t_list **envpX, int nbr_cmds)
 	{
 		if_is_unset(args[i - 1], envpX, env);
 	}
+	*envpX = s;
 }
